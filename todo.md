@@ -8,10 +8,10 @@
 - [x] Install Docker (and ensure it's running)
 - [x] Clone LibreChat from GitHub
 - [x] Open project in Cursor
-- [ ] Create `.env` file from `.env.example`
-- [ ] Add OpenAI API Key to `.env`
-- [ ] Run `npm install` and `npm run build`
-- [ ] Run `npm run dev` and open http://localhost:3080
+- [x] Create `.env` file from `.env.example`
+- [x] Add OpenAI API Key to `.env`
+- [x] Run `npm install` and `npm run build`
+- [x] Run `npm run dev` and open http://localhost:3080
 - [ ] Test login/signup
 - [ ] Send/receive messages
 - [ ] Confirm chat history

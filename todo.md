@@ -1,21 +1,23 @@
-# ✅ To-Do List: Build PresClubGPT in Cursor
+# Updated To-Do List: Build PresClubGPT in Cursor
 
-## 🧱 Project Setup
+## 🧱 Step 1: Get LibreChat Running Locally
 
-- [ ] Fork LibreChat from GitHub
-- [ ] Create a new local project in Cursor using the fork
-- [ ] Rename remote `origin` to `upstream` for tracking updates
-- [ ] Create a new branch: `presclubgpt-dev`
-- [ ] Install project dependencies
-- [ ] Set up `.env` file with placeholders:
-  - `SUPABASE_URL`
-  - `SUPABASE_ANON_KEY`
-  - `OPENAI_API_KEY`
-  - `STRIPE_SECRET_KEY`
+- [x] Install Homebrew (if not already installed)
+- [x] Install Node.js via Homebrew
+- [x] Install Git
+- [x] Install Docker (and ensure it's running)
+- [x] Clone LibreChat from GitHub
+- [x] Open project in Cursor
+- [ ] Create `.env` file from `.env.example`
+- [ ] Add OpenAI API Key to `.env`
+- [ ] Run `npm install` and `npm run build`
+- [ ] Run `npm run dev` and open http://localhost:3080
+- [ ] Test login/signup
+- [ ] Send/receive messages
+- [ ] Confirm chat history
+- [ ] Test file uploads (if enabled)
 
----
-
-## 🔐 Supabase Setup
+## 🔁 Step 2: Supabase Setup
 
 - [ ] Create a new Supabase project
 - [ ] Enable Supabase Vector extension
@@ -26,18 +28,14 @@
   - `chat_history`
 - [ ] Create vector store table with metadata support
 
----
-
-## 🔧 LibreChat Customisation
+## 🔧 Step 3: LibreChat Customisation
 
 - [ ] Replace auth flow with Supabase magic link (client + server)
 - [ ] Add logic to include `user_id` metadata when storing/retrieving vectors
 - [ ] Add persistent memory storage via `user_memory` table
 - [ ] Ensure message history is stored per user
 
----
-
-## 📦 RAG & N8N Integration
+## 📦 Step 4: RAG & N8N Integration
 
 - [ ] Build N8N workflow to:
   - Ingest sales content (frameworks, books, etc.)
@@ -45,35 +43,27 @@
 - [ ] Enable content tagging (e.g. `is_global`, `topic`, `source`)
 - [ ] Connect chat backend to query Supabase Vector DB
 
----
-
-## 💬 Chat UX Enhancements
+## 💬 Step 5: Chat UX Enhancements
 
 - [ ] Ensure mobile responsiveness
 - [ ] Display previous chat sessions
 - [ ] Display inline responses for tools (placeholder logic for now)
 
----
-
-## 🚀 Deployment
+## 🚀 Step 6: Deployment
 
 - [ ] Create a `Dockerfile` in root of project
 - [ ] Build and test Docker container locally
 - [ ] Set up GCP Cloud Run deployment
 - [ ] Deploy container and test full chat flow in production
 
----
-
-## 💳 Stripe Billing (Post-MVP)
+## 💳 Step 7: Stripe Billing (Post-MVP)
 
 - [ ] Create Stripe account, products, and pricing plans
 - [ ] Add logic to check usage limits (messages)
 - [ ] Add webhook to update user tier in Supabase
 - [ ] Redirect users to Stripe Checkout for upgrade
 
----
-
-## 🧪 Final Testing
+## 🧪 Step 8: Final Testing
 
 - [ ] Test:
   - Auth flow
@@ -82,27 +72,3 @@
   - Mobile UI
   - Vector isolation by `user_id`
 - [ ] Launch closed beta with early users
-
----
-
-## 📌 Stretch Goals (Future)
-
-- [ ] Workspace/org sharing model
-- [ ] Manual tool triggers (forms/buttons)
-- [ ] Admin dashboard
-- [ ] Custom memory service (Zep or similar)
----
-
-## ⚠️ Edge Case Tasks
-
-- [ ] Add "resend magic link" support and expired link messaging
-- [ ] Validate Supabase session expiration and reuse handling
-- [ ] Ensure user email can be reused across workspaces
-- [ ] Add upload validation logic to allow only admin to set global tagging
-- [ ] Implement file upload rate-limiting or batching
-- [ ] Confirm separation of memory vs RAG in prompt logic
-- [ ] Add fallback messaging for failed tool executions
-- [ ] Implement upgrade CTA for users who hit message quota
-- [ ] Add logging or retry mechanism for Stripe webhooks
-- [ ] Add onboarding tips for first-time users (e.g., "Try MEDDIC...")
-- [ ] Make assistant explain when it auto-triggers a tool
